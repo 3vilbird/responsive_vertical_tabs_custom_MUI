@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import Paper from '@material-ui/core/Paper';
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+    background:'red',
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+}));
+
+export default function App() {
+  const [spacing, setSpacing] = React.useState(2);
+  const classes = useStyles();
+
+  const handleChange = (event) => {
+    setSpacing(Number(event.target.value));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container className={classes.root} spacing={2} className="bg-danger">
+      <Grid item xs={3} className="bg-warning" >
+        <Grid container justify="center" spacing={spacing} className="">
+          {[0, 1, 2].map((value) => (
+            <Grid key={value} item style={{background:"green" }}>
+              <Paper className={classes.paper} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper className={classes.control}>
+          <Grid container>
+            <Grid item>
+              <FormLabel>spacing</FormLabel>
+              <RadioGroup
+                name="spacing"
+                aria-label="spacing"
+                value={spacing.toString()}
+                onChange={handleChange}
+                row
+              >
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                  <FormControlLabel
+                    key={value}
+                    value={value.toString()}
+                    control={<Radio />}
+                    label={value.toString()}
+                  />
+                ))}
+              </RadioGroup>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }
-
-export default App;

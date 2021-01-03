@@ -3,10 +3,98 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Layouttest from './components/Test/Layouttest';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <div style={{height:"100px",}} >  
+  
+  
+  <Layouttest 
+    tabs={[
+      {
+          tabName: "Member Details",                                
+          tabContent: (
+            <h1> inject you'r  component here  </h1>
+          )
+      },
+      {
+          tabName: "Claim Details",
+        
+          tabContent: (
+              <h1>Tab ___ 2 </h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 3</h1>
+          )
+      },
+
+
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 4</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+      {
+          tabName: "Hospital Details",
+          tabContent: (
+              <h1>Tab __ 5</h1>
+          )
+      },
+
+
+  ]}
+    
+    
+    
+    
+    
+    
+    
+    />
+    </div>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
