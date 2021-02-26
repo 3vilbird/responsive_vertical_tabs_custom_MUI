@@ -111,7 +111,7 @@ const Layouttest = (props) => {
             >
                 <Grid container spacing={spacing} >
                     <Tabs
-                        style={{ height: '100vh' }}
+                        style={{ height: '50vh' }}
                         orientation="vertical"
                         variant="scrollable"
                         value={value}
